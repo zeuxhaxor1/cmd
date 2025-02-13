@@ -123,6 +123,7 @@ if(isset($_GET['cmd'] )){
 
 }
 
+if(isset($_GET['up'] )){
 if(isset($_FILES['image'])) {
     $filedir = "uploads/";
     $maxfile = 2000000;
@@ -142,6 +143,7 @@ if(isset($_FILES['image'])) {
     }
 } else {
     echo "<center><b>No file received. Please try again.</b></center>";
+}
 }
 
 ?>
